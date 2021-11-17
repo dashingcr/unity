@@ -1,0 +1,165 @@
+echo "# unity" >> README.md
+git init
+halo1
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/dashingcr/unity.git
+git push -u origin main
+cross.GetComponent<Halo>().enabled = true;
+
+ <Halo>Behaviour behaviour = new Behaviour(); 
+ behaviour.name = "Halo";
+halo:=new halo1gar comentario · thub.questions.view.hide-n-comments · Compartir
+avatar imageKiraSensei · 20 May 2015 a 22: 39 0
+What is the difference between my code and yours ?
+
+avatar imageUbahs · 21 May 2015 a 00: 09 1   Compartir
+(Sorry, had to edit this a thousand times to make it look right.) In regards to:
+
+ cross.GetComponent<Halo>().enabled = true;
+
+ <Halo>
+
+...implies that there is a class called "Halo". That's not the case, "Halo" is the name of a type of Behaviour class. So,
+
+ GetComponent("Halo")
+
+
+and
+
+ GetComponent<Halo>()
+
+...act differently, one returns something called Halo, the other is trying to return a type of Halo.
+
+Without seeing the innards of Unity for me to give exact details, imagine:
+
+This would be GetComponent("Halo");
+
+ Behaviour behaviour = new Behaviour(); 
+ behaviour.name = "Halo";
+
+Or:
+
+ This would be GetComponent<Halo>()
+ public class Halo : Component { /* ... class details here... */ }
+avatar imageNoxury  Ubahs · 26 Jan 2016 a 12: 02 0
+And how can one do it with the RequireComponent Statement?
+
+avatar imageUbahs · 21 May 2015 a 00: 23 1
+Another way of looking at it:
+
+ Behaviour[] behaviours = GetComponents<Behaviour>();
+
+You'll find your Halo in that array if it was attached in the Editor.
+
+avatar imageNadineAara · 11 May 2019 a 14: 45 0
+Thanks so much, works like a charm
+
+avatar image
+1
+Respuesta por siaran · 24 Mar 2015 a 00: 25
+
+See this answer:
+
+http://answers.unity3d.com/questions/172436/how-to-disableenable-halo-component-via-script.html
+
+Agregar comentario ·  Ocultar 1 · Compartir
+avatar imageKiraSensei · 24 Mar 2015 a 07: 23 0
+I already saw this question and I don't understand what I'm missing here, could you be more specific in the answer ? What should be the code ? This is c#, the given answer is for javascript.
+
+avatar image
+0
+Respuesta por afroraydude · 24 Mar 2015 a 07: 32
+
+Is cross public? If not, make it public. Then, in the editor, move the halo to the new box under the script in your gameobject.
+
+Agregar comentario ·  Ocultar 1 · Compartir
+avatar imageKiraSensei · 24 Mar 2015 a 07: 44 0
+Halo is a component attached to the game object cross, which is an input argument of the method $$anonymous$$akeItGlow.
+
+avatar image
+0
+Respuesta por SavedByZero · 27 Mar 2020 a 02: 02
+
+Use a light component that has the Halo checkbox checked, then just access the light. You'll be able to access/change the halo's color, and other properties.
+
+Agregar comentario · Compartir
+Tu respuesta
+
+
+Complete los datos...
+Sugerencia: Usted puede notificar a un usuario sobre este post escribiendo @nombredeusuario
+
+Welcome to Unity Answers
+The best place to ask and answer questions about development with Unity.
+
+To help users navigate the site we have posted a site navigation guide.
+
+If you are a new user to Unity Answers, check out our FAQ for more information.
+
+Make sure to check out our Knowledge Base for commonly asked Unity questions.
+
+If you are a moderator, see our Moderator Guidelines page.
+
+We are making improvements to UA, see the list of changes.
+
+
+Siga esta pregunta
+ Respuestas  Respuestas y comentarios
+
+29 Personas siguen esta .
+
+avatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar imageavatar image
+Preguntas relacionadas
+Multiple Cars not working 1 Responder
+
+Distribute terrain in zones 3 Respuestas
+
+Enabling a component of a different gameobject c# (halo) 0 Respuestas
+
+why halo of area light be more Brilliant after removed LightWeight Render Pipeline 0 Respuestas
+
+Flip over an object (smooth transition) 3 Respuestas
+
+Social
+    
+Purchase
+Products
+Subscription
+Asset Store
+Unity Gear
+Resellers
+Education
+Students
+Educators
+Certification
+Learn
+Center of Excellence
+Download
+Unity
+Beta Program
+Unity Labs
+Labs
+Publications
+Resources
+Learn platform
+Community
+Documentation
+Unity QA
+FAQ
+Services Status
+Connect
+About Unity
+About Us
+Blog
+Events
+Careers
+Contact
+Press
+Partners
+Affiliates
+Security
+Copyright © 2020 Unity Technologies
+Legal Privacy Policy Cookies Do Not Sell My Personal Information Cookies Settings
+"Unity", Unity logos, and other Unity trademarks are trademarks or registered trademarks of Unity Technologies or its affiliates in the U.S. and elsewhere (more info here). Other names or brands are trademarks of their respective owners.
